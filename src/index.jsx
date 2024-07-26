@@ -1,6 +1,5 @@
 
 import { useDispatch, useSelector } from "react-redux"
-import './components/style.css'
 
 import './index.css'
 import { useState } from "react"
