@@ -180,12 +180,14 @@ export default function Settings() {
           </h3>
         </div>
 
-        <div className="rounded-3xl bg-slate-900 p-5">
+        { teamEnabled && (
+          <div className="rounded-3xl bg-slate-900 p-5">
           <p className="text-slate-400 text-sm">Members</p>
           <h3 className="text-3xl font-bold mt-2">
             {team.length}
           </h3>
         </div>
+        )}
 
         <div className="rounded-3xl bg-slate-900 p-5">
           <p className="text-slate-400 text-sm">Team Mode</p>
@@ -384,7 +386,7 @@ export default function Settings() {
           <div className="flex items-center justify-between gap-4 mb-6">
             <h2 className="text-xl font-semibold text-white">Team members</h2>
             <button
-              className="rounded-2xl bg-blue-500 px-4 py-2 text-sm font-semibold text-white hover:bg-blue-400"
+              className="rounded-2xl bg-blue-500 px-4 py-2 text-sm font-semibold text-white hover:bg-blue-400 rounded-button"
               onClick={() => {
                 setEditingMember(null);
                 setMemberForm({ name: '', email: '', role: 'developer' });

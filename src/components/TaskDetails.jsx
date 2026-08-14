@@ -33,7 +33,7 @@ export default function TaskDetails({ task, onClose, onEdit }) {
   const assignee =
     currentWorkspace?.team?.find(
       (member) => member.id === task.assignedTo
-    ) || state.user.id === task.assignedTo;
+    ) || (  task.assignedTo === state.user.id ? state.user : null);
 
   const priority =
     priorityConfig[task.priority] || priorityConfig.medium;
@@ -77,6 +77,7 @@ export default function TaskDetails({ task, onClose, onEdit }) {
           transition-all
           hover:bg-slate-700
           hover:text-white
+          rounded-button
         "
       >
         ✕
